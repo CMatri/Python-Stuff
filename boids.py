@@ -146,9 +146,9 @@ border_rule = 20.0
 bound_x_rule = width - border_rule
 bound_y_rule = height - border_rule
 
-num_spheres = 40
-num_boids = 30
-num_zomboids = 0
+num_spheres = 20
+num_boids = 80
+num_zomboids = 7
 max_sphere_rad = 20
 min_sphere_rad = 5
 max_boid_vel = 4
