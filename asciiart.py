@@ -108,7 +108,7 @@ characters = [
 		" "
         ]
 
-toUse = characters
+toUse = charactersOld
 factor = len(toUse) - 1
 
 def getGrayscale(value, invert):
@@ -132,7 +132,7 @@ def getAverage(x, y, amX, amY, width, height, im):
     else:
         return 0
 
-imi = Image.open("face.png")
+imi = Image.open("obama.jpg")
 im = imi.convert("RGB")
 width, height = im.size
 x, y = 0, 0
@@ -152,13 +152,8 @@ while y < height:
     y = y + incY
     x = 0
     text_file.write("%s\n" % line)
-    print(Style.DIM + line)
+    print("    " + line)
     line = ""
-
-print(Fore.RED + 'some red text')
-print(Back.GREEN + 'and with a green background')
-print(Style.DIM + 'and in dim text')
-print(Style.RESET_ALL)
 
 im.close()
 text_file.close()
