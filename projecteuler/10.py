@@ -1,4 +1,4 @@
 import primes
 
-l = primes.find_primes(100000000, True)
-print sum(l)
+l = primes.find_primes(10, True)
+#print l

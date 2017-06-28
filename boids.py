@@ -147,8 +147,8 @@ bound_x_rule = width - border_rule
 bound_y_rule = height - border_rule
 
 num_spheres = 20
-num_boids = 80
-num_zomboids = 7
+num_boids = 30
+num_zomboids = 2
 max_sphere_rad = 20
 min_sphere_rad = 5
 max_boid_vel = 4
@@ -156,6 +156,7 @@ max_zomboid_vel = 3
 boid_collision_sphere_rad = 15
 debug_circles = False
 zomboids_can_kill = True
+zomboids_convert = False
 
 for i in range(0, num_spheres):
 	sphere_obs_list.append(SphereObstacle(random.uniform(min_sphere_rad, max_sphere_rad), random.uniform(border_rule, bound_x_rule), random.uniform(border_rule, bound_x_rule)))
@@ -193,8 +194,9 @@ while not done:
 			if boid.zombie and dist < closest_prey_dist and not boid2.zombie:
 	   			closest_prey = boid2
 	   			closest_prey_dist = dist
-	   			if closest_prey_dist < 10 and zomboids_can_kill: boid_list.remove(closest_prey)
-
+	   			if closest_prey_dist < 10 and zomboids_can_kill:
+	   				 boid_list.remove(closest_prey)
+	   				 if zomboids_convert: boid_list.append(Boid(closest_prey.posX, closest_prey.posY, closest_prey.velX, closest_prey.velY, 0, boid_collision_sphere_rad, True))
 			if dist < 100 and not boid2.zombie:
 	   			close_boids.append(boid2)
 			if dist < 100 and boid2.zombie:

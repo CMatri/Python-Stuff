@@ -1,5 +1,8 @@
 from PIL import Image, ImageDraw
 from colorama import init, deinit, Fore, Back, Style
+import requests
+from io import BytesIO
+
 init()
 
 charactersOld = [ "#",
@@ -62,7 +65,7 @@ characters = [
 		"a",
 		"e",
 		"2",
-        "S",
+        		"S",
 		"5",
 		"Y",
 		"f",
@@ -132,7 +135,9 @@ def getAverage(x, y, amX, amY, width, height, im):
     else:
         return 0
 
-imi = Image.open("obama.jpg")
+imi = Image.open("mountains.jpg")
+#response = requests.get("https://i.redditmedia.com/-MFLOPiLFGqTt3ntpc5GTyofdxuGhUXwlHvZjhnnxTY.jpg?w=920&s=b92e20bc74aabafcd6711d09f7c13992")
+#imi = Image.open(BytesIO(response.content))
 im = imi.convert("RGB")
 width, height = im.size
 x, y = 0, 0
@@ -140,8 +145,8 @@ x, y = 0, 0
 text_file = open("Output.txt", "w")
 line = ""
 
-incX = 4
-incY = 8
+incX = 8
+incY = 16
 
 while y < height:
     while x < width:

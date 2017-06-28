@@ -205,4 +205,3 @@ stdscr.keypad(0)
 curses.echo()
 curses.endwin()
 
-# get her back by writing out a story about wishing we could start from the beginning, me trying to 'woo' a girl i didnt know
